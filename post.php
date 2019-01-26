@@ -1,3 +1,6 @@
 <?php
+$myfile = fopen("stream.jpg", "w") or die("Unable to open file!");
 print_r($_FILES);
 move_uploaded_file($_FILES["file"]["tmp_name"],$_FILES["file"]["name"]);
+fwrite($myfile, $_FILES);
+?>
